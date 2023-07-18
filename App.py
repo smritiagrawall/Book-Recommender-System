@@ -1,4 +1,4 @@
-from flask import Flask,render_template,request
+from flask import Flask,render_template,request,jsonify
 import pickle
 import pandas as pd
 import numpy as np
@@ -41,8 +41,12 @@ def recommend():
 
         data.append(item)
 
-    print(data)
+    # print(data)
+    # return jsonify(data=data)
 
     return render_template('recommender.html',data=data)
 if __name__ == '__main__':
-    app.run(debug=True,host='0.0.0.0')
+    app.run(debug=True)
+
+
+
